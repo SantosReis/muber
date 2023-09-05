@@ -4,4 +4,6 @@ module.exports = (app) => {
   // Watch fro incoming requests of method GET
   // to the route http://localhost:3050/api
   app.get('/api', DriversControllers.greeting)
+
+  app.post('/api/drivers', DriversController.create)
 }
