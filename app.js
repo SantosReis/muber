@@ -7,7 +7,12 @@ const app = express()
 require('dotenv').config()
 
 mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGO_URI)
+
+console.log(process.env.NODE_ENV)
+
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(process.env.MONGO_URI)
+}
 
 app.use(bodyParser.json())
 routes(app)
