@@ -1,10 +1,10 @@
-const DriversControllers = require('../controllers/drivers_controller')
+const DriversController = require('../controllers/drivers_controller')
 
 module.exports = (app) => {
   // Watch fro incoming requests of method GET
   // to the route http://localhost:3050/api
-  app.get('/api', DriversControllers.greeting)
+  app.get('/api', DriversController.greeting)
 
-  app.post('/api/drivers', DriversControllers.create)
+  app.post('/api/drivers', DriversController.create)
   app.put('/api/drivers/:id', DriversController.edit)
 }
